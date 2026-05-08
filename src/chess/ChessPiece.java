@@ -3,6 +3,7 @@ package chess;
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
+import chess.pieces.ChessPosition;
 
 public abstract class ChessPiece extends Piece  {
 	
@@ -20,6 +21,10 @@ public abstract class ChessPiece extends Piece  {
 	@Override
 	public String toString() {
 	    return "P";  
+	}
+	
+	public ChessPosition getChessPosition() {
+		return ChessPosition.fromPosition(position);
 	}
 	
 	protected boolean isThereOpponentPiece(Position position) {
